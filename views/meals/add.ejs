@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Meal – <%= shopData.shopName %></title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<div class="container">
+  <h1><%= shopData.shopName %></h1>
+   <nav class="navbar">
+      <div class="nav-left">
+        <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+      </div>
+
+        <ul class="nav-center">
+            <li><a href="../about">About</a></li>
+            <li><a href="./add">Add Meals</a></li>
+            <li><a href="./edit">Edit Meal</a></li>
+            <li><a href="./list">All Meals</a></li>
+            <li><a href="./search">Search Meals</a></li>
+        </ul> 
+      
+      <div class="nav-right">
+        <a href="../auth/login" class="login-btn">Login</a>
+        <a href="/logout" class="login-btn">Logout</a>
+      </div>
+
+    </nav>
+  <div class="section">
+    <h2 style="margin-top:0">Add a New Meal</h2>
+
+    <form action="./add" method="POST">
+      <label>Meal Name</label>
+      <input type="text" name="name" required>
+
+      <label>Calories (cal)</label>
+      <input type="number" step="1" name="calories" required>
+
+      <label>Protein (g)</label>
+      <input type="number" step="1" name="protein" required>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Add Meal</button>
+        <a class="btn" href="./list">Back to List</a>
+      </div>
+    </form>
+
+  </div>
+</div>
+</body>
+</html>

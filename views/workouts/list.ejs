@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workout List – <%= shopData.shopName %></title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<div class="container Workout-list">
+  <h1><%= shopData.shopName %></h1>   
+   <nav class="navbar">
+      <div class="nav-left">
+        <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+      </div>
+
+        <ul class="nav-center">
+            <li><a href="../about">About</a></li>
+            <li><a href="./add">Add Workouts</a></li>
+            <li><a href="./edit">Edit Workout</a></li>
+            <li><a href="./list">All Workouts</a></li>
+            <li><a href="./search">Search Workouts</a></li>
+        </ul> 
+      
+      <div class="nav-right">
+        <a href="../auth/login" class="login-btn">Login</a>
+        <a href="/logout" class="login-btn">Logout</a>
+      </div>
+
+    </nav>
+
+  <div class="section">
+    <h2 style="margin-top:0">Workout List <span class="badge">(<%= workouts.length %>)</span></h2>
+
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th>Actions</th>
+      </tr>
+
+      <% Workouts.forEach(w => { %>
+        <tr>
+          <td><%= w.id %></td>
+          <td><%= w.name %></td>
+          <td><%= w.sets %></td>
+          <td><%= w.reps %></td>
+          <td class="actions">
+            <a href="./edit/<%= w.id %>" class="btn">Edit</a>
+            <a href="./delete/<%= w.id %>" class="btn btn-danger" onclick="return confirm('Delete this Workout?')">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+
+    <div style="margin-top:14px">
+      <a href="./add" class="btn">+ Add Workout</a>
+      <a href="./search" class="btn">Search</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

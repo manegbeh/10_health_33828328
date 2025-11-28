@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("../A0829918-4473-4D9A-9250-5DE5CAD3234B.png") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Center the login box */
+.container, .index-container{
+    max-width: 420px;
+    margin: 60px auto;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+/* Headings */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #e5e5e5;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #f1f1f1;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Remember + Forgot password row */
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.flex-row a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.flex-row a:hover {
+    text-decoration: underline;
+}
+
+/* Main button */
+button, .btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0,0,0,0.75);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Google Sign-in button */
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+}
+
+.google-btn:hover {
+    background: #f3f4f6;
+}
+
+/* Sign up link */
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #444;
+}
+
+.footer-text a {
+    text-decoration: none;
+    color: #bbbbbb;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+  width: 100%;
+  background: #111111;
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+
+.nav-left .nav-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;     
+}
+
+.nav-center {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.nav-center a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.nav-center a:hover {
+  color: #cccccc;
+}
+
+.nav-right {
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.login-btn {
+  padding: 10px 18px;
+  background: #e5e5e5;
+  color: #000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.login-btn:hover {
+  background: #333333;
+  color: white;
+}
+
+.index-container {
+  margin: 140px auto 0 auto;
+  text-align: center;
+  max-width: 500px;
+}
+
+/* workout list container */
+.container.workout-list, .container.meal-list{
+  max-width: 750px;
+  margin: 150px auto;
+  padding: 40px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th {
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.table tr:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Action buttons layout */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.btn-danger {
+  background: #ce0418;
+}
+
+.btn-danger:hover {
+  background: #b02a37;
+}

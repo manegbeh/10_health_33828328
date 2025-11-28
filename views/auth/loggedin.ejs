@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome – <%= shopData.shopName %></title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+      </div>
+
+      <ul class="nav-center">
+        <li><a href="/about">About</a></li>
+        <li><a href="/meals/list">All Meals</a></li>
+        <li><a href="/workouts/list">All Workouts</a></li>
+        <li><a href="/auth/register">Register</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="./login" class="login-btn">Login</a>
+        <a href="/logout" class="login-btn">Logout</a>
+      </div>
+    </nav>
+
+<div class="container book-list">
+  <h1>Login Successful!</h1>
+
+  <p>Welcome back, <strong><%= username %></strong>.</p>
+
+  <a href="/books/list" class="btn" style="margin-top: 20px;">Go to Book List</a>
+</div>
+
+</body>
+</html>

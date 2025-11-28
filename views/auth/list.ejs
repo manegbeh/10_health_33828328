@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User List – <%= shopData.shopName %></title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+      <nav class="navbar">
+      <div class="nav-left">
+        <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+      </div>
+
+      <ul class="nav-center">
+        <li><a href="/about">About</a></li>
+        <li><a href="/meals/list">All Meals</a></li>
+        <li><a href="/workouts/list">All Workouts</a></li>
+        <li><a href="/auth/register">Register</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="./login" class="login-btn">Login</a>
+        <a href="/logout" class="login-btn">Logout</a>
+      </div>
+    </nav>
+
+    <div class="container book-list">
+      <h1>User List</h1>
+
+      <table class="table">
+        <tr>
+          <th>Username</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Email</th>
+        </tr>
+
+        <% users.forEach(u => { %>
+          <tr>
+            <td><%= u.username %></td>
+            <td><%= u.first %></td>
+            <td><%= u.last %></td>
+            <td><%= u.email %></td>
+          </tr>
+        <% }) %>
+      </table>
+
+    </div>
+
+</body>
+</html>

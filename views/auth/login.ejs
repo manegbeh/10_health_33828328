@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login – <%= shopData.shopName %></title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1><%= shopData.shopName %></h1>   
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+      </div>
+
+      <ul class="nav-center">
+        <li><a href="/about">About</a></li>
+        <li><a href="/meals/list">All Meals</a></li>
+        <li><a href="/workouts/list">All Workouts</a></li>
+        <li><a href="/auth/register">Register</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="./login" class="login-btn">Login</a>
+        <a href="/logout" class="login-btn">Logout</a>
+      </div>
+    </nav>
+  <div class="container">
+
+    
+    <div class="section">
+      <h2>Login</h2>
+
+      <form action="./loggedin" method="POST" class="form">
+        <label>Username</label>
+        <input type="text" name="username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</body>
+</html>

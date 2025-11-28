@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome to <%=shopData.shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body class="homepage">
+    <div class="index-container">
+        <h1 href="/" class="nav-logo"> Welcome to <%= shopData.shopName %></h1>
+        <h2 class="hero-sub">Track. Improve. Become Stronger.</h2>
+
+        <div class="features">
+          <div class="feature-box">Log Workouts Easily</div>
+          <div class="feature-box">Track Your Meals</div>
+          <div class="feature-box">View Your Progress</div>
+        </div>
+        <b></b>
+        <h2 class="moto">"Small progress is still progress. Keep moving."</h2>
+        <b></b>
+        <div class="home-buttons">
+          <a class="btn" href="/meals/list">View Meals</a>
+          <a class="btn" href="/workouts/list">View Workouts</a>
+          <a class="btn" href="/auth/register">Get Started</a>
+        </div>
+        <p class="already-member">
+          Already a member? <a href="/auth/login">Click here</a>
+        </p>
+  </body>
+</html>
