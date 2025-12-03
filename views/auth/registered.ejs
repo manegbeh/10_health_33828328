@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body> 
+        <nav class="navbar">
+        <div class="nav-left">
+            <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+        </div>
+
+        <ul class="nav-center">
+            <li><a href="/about">About</a></li>
+            <li><a href="/meals/list">All Meals</a></li>
+            <li><a href="/workouts/list">All Workouts</a></li>
+            <li><a href="/auth/register">Register</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="/auth/login" class="login-btn">Login</a>
+            <a href="/logout" class="login-btn">Logout</a>
+        </div>
+        </nav>
+    <div class="index-container" style="max-width:600px; text-align:center;">
+        <h1 class="nav-logo">Registration Successful</h1>
+
+        <p style="font-size:1.1rem; margin-top:20px;">
+            Hello <%= first %> <%= last %>, you are now registered!
+        </p>
+
+        <p style="font-size:1rem;">
+            We will send an email to you at <strong><%= email %></strong>.
+        </p>
+
+        <p style="margin-bottom: 30px;">
+            Your account has been created successfully.
+        </p>
+
+        <a class="btn" href="/auth/login">Proceed to Login</a>
+
+    </div>
+
+</body>
+</html>

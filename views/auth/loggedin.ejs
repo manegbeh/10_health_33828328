@@ -24,11 +24,18 @@
     </nav>
 
 <div class="container book-list">
-  <h1>Login Successful!</h1>
 
-  <p>Welcome back, <strong><%= username %></strong>.</p>
+  <h1><%= message %></h1>
 
-  <a href="/books/list" class="btn" style="margin-top: 20px;">Go to Book List</a>
+  <% if (username) { %>
+      <p>Welcome back, <strong><%= username %></strong>.</p>
+      <a href="/workouts/list" class="btn" style="margin-top: 20px;">View Workouts</a>
+      <a href="/meals/list" class="btn" style="margin-top: 20px;">View Meals</a>
+  <% } else { %>
+      <p>Your login attempt was not successful.</p>
+      <a href="/auth/login" class="btn" style="margin-top: 20px;">Try Again</a>
+  <% } %>
+
 </div>
 
 </body>

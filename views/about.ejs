@@ -1,53 +1,57 @@
-<!doctype html>
-<html>
-  <head>
-    <title>About <%=shopData.shopName%></title>
-    <link rel="stylesheet"  type="text/css" href="/main.css" />
-  </head>
-  <body class="homepage">
-    <nav class="navbar">
-      <div class="nav-left">
-        <a href="/" class="nav-logo"><%= shopData.shopName %></a>
-      </div>
+    <!doctype html>
+    <html>
+    <head>
+        <title>About <%=shopData.shopName%></title>
+        <link rel="stylesheet"  type="text/css" href="/main.css" />
+    </head>
+    <body class="homepage">
+        <nav class="navbar">
+        <div class="nav-left">
+            <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+        </div>
 
-      <ul class="nav-center">        
-        <li><a href="/about">About</a></li>
-        <li><a href="/meals/list">All meals</a></li>
-        <li><a href="/workouts/list">All Workouts</a></li>
-        <li><a href="/users/register">Register</a></li>
-      </ul>
+        <ul class="nav-center">        
+            <li><a href="/about">About</a></li>
+            <li><a href="/meals/list">All meals</a></li>
+            <li><a href="/workouts/list">All Workouts</a></li>
+            <li><a href="/auth/register">Register</a></li>
+        </ul>
 
-      <div class="nav-right">
-        <a href="/auth/login" class="login-btn">Login</a>
-        <a href="/logout" class="login-btn">Logout</a>
-      </div>
-    </nav>
-    <div class="index-container">
-      <h1>About <%= shopData.shopName %></h1>
-      <p>
-        <%= shopData.shopName %> is a simple health and fitness application designed to help users 
-        track their workouts, meals, and overall progress. The goal of this app is to make it easy to 
-        build healthy habits by keeping all your fitness information in one place.
-      </p>
+        <div class="nav-right">
+            <a href="/auth/login" class="login-btn">Login</a>
+            <a href="/logout" class="login-btn">Logout</a>
+        </div>
+        </nav>
+        <div class="index-container" style="text-align: left;">
+        <h1>About <%= shopData.shopName %></h1>
+        <p>
+            <%= shopData.shopName %> is a simple health and fitness application designed to help users 
+            track their workouts, meals, and overall progress. The goal of this app is to make it easy to 
+            build healthy habits by keeping all your fitness information in one place.
+        </p>
 
-      <p>
-        This app was created as part of the Dynamic Web Applications module and demonstrates key full-stack 
-        concepts such as routing, database integration, searching, form handling, authentication, 
-        and dynamic page rendering using EJS.
-      </p>
+        <p>
+            This app was created as part of the Dynamic Web Applications module and demonstrates key full-stack 
+            concepts such as routing, database integration, searching, form handling, authentication, 
+            and dynamic page rendering using EJS.
+        </p>
 
-      <h2>Key Features</h2>
-      <ul>
-        <li>Log workouts with exercise name, duration, and calories burned</li>
-        <li>Record meals and track daily calorie intake</li>
-        <li>Search your workout or meal history using database queries</li>
-        <li>View summaries and recent activity on your dashboard</li>
-        <li>Simple login system with session authentication</li>
-      </ul>
-      <p>
-        <%= shopData.shopName %> brings these technologies together to create a clean, functional, 
-        and user-friendly fitness tracking experience.
-      </p>
-    </div>
-  </body>
-</html>
+        <h2>Key Features</h2>
+        <ul>
+            <li>Log workouts with exercise name, duration, and calories burned</li>
+            <li>Record meals and track daily calorie intake</li>
+            <li>Search your workout or meal history using database queries</li>
+            <li>View summaries and recent activity on your dashboard</li>
+            <li>Simple login system with session authentication</li>
+        </ul>
+        <p>
+            <%= shopData.shopName %> brings these technologies together to create a clean, functional, 
+            and user-friendly fitness tracking experience.
+        </p>
+
+        <p class="already-member" style="margin-top:25px;">
+            Already registered? <a href="/auth/login">Click here</a>
+        </p>
+        </div>
+    </body>
+    </html>

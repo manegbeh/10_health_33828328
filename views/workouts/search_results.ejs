@@ -32,16 +32,17 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Sets</th>
-            <th>Reps</th>
+            <th>Calories</th>
+            <th>Time</th>
+            <th>Actions</th>
         </tr>
 
         <% workouts.forEach(w => { %>
             <tr>
-            <td><%= w.id %></td>
-            <td><%= w.name %></td>
-            <td><%= w.sets %></td>
-            <td><%= w.reps %></td>
+                <td><%= w.id %></td>
+                <td><%= w.name %></td>
+                <td><%= w.calories %></td>
+                <td><%= w.time %></td>
             </tr>
         <% }) %>
     </table>

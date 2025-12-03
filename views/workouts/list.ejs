@@ -34,8 +34,8 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Sets</th>
-        <th>Reps</th>
+        <th>Calories</th>
+        <th>Time</th>
         <th>Actions</th>
       </tr>
 
@@ -43,8 +43,8 @@
         <tr>
           <td><%= w.id %></td>
           <td><%= w.name %></td>
-          <td><%= w.sets %></td>
-          <td><%= w.reps %></td>
+          <td><%= w.calories %></td>
+          <td><%= w.time %></td>
           <td class="actions">
             <a href="./edit/<%= w.id %>" class="btn">Edit</a>
             <a href="./delete/<%= w.id %>" class="btn btn-danger" onclick="return confirm('Delete this Workout?')">Delete</a>

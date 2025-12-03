@@ -10,9 +10,9 @@ const port = process.env.PORT || 8000;
 
 const db = mysql.createPool({
   host: process.env.FF_HOST || process.env.DB_HOST || "localhost",
-  user: process.env.FF_USER || process.env.DB_USER || "lift_logix_app",
-  password: process.env.FF_PASSWORD || process.env.DB_PASS || "qwertyuiop",
-  database: process.env.FF_DATABASE || process.env.DB_NAME || "lift_logix_app",
+  user: process.env.HEALTH_USER || "health_app",
+  password: process.env.HEALTH_PASSWORD || "qwertyuiop",
+  database: process.env.HEALTH_DATABASE || "health",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,

@@ -1,18 +1,19 @@
 USE health;
 
-INSERT INTO users (username, password)
-VALUES ('gold', 'smiths');
+-- REQUIRED TEST USER
+INSERT INTO users (username, first, last, email, hashedPassword)
+VALUES ('gold', 'Test', 'User', 'test@example.com', '$2a$10$PLACEHOLDERHASH');
 
 -- SAMPLE MEALS
 INSERT INTO meals (name, calories, protein)
 VALUES
 ('Chicken Salad', 350, 30),
-('Pasta Bowl', 500, 15),
-('Protein Shake', 200, 25);
+('Protein Smoothie', 220, 25),
+('Pasta Bowl', 550, 15);
 
--- SAMPLE WORKOUTS
-INSERT INTO workouts (name, sets, reps)
+-- SAMPLE WORKOUTS (updated for calories + time)
+INSERT INTO workouts (name, calories, time)
 VALUES
-('Bench Press', 4, 10),
-('Squats', 5, 8),
-('Deadlift', 3, 5);
+('Jogging', 300, 30),
+('Cycling', 450, 45),
+('Skipping Rope', 250, 20);
