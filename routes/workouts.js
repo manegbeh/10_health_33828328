@@ -41,16 +41,16 @@ router.get('/add', redirectLogin, (req, res) => {
 
 // add submit
 router.post('/add', redirectLogin, (req, res, next) => {
-  const name = req.sanitize(req.body.name)
-  const sets = req.body.sets
-  const reps = req.body.reps
+  const name = req.sanitize(req.body.name);
+  const calories = parseInt(req.body.calories);
+  const time = parseInt(req.body.time); // duration in seconds from timer
 
-  const sql = "INSERT INTO workouts (name, sets, reps) VALUES (?, ?, ?)"
-  db.query(sql, [name, sets, reps], (err) => {
-      if (err) return next(err)
-      res.redirect("../workouts/list")
-  })
-})
+  const sql = "INSERT INTO workouts (name, calories, time) VALUES (?, ?, ?)";
+  db.query(sql, [name, calories, time], (err) => {
+      if (err) return next(err);
+      res.redirect("../workouts/list");
+  });
+});
 
 // edit form
 router.get('/edit/:id', redirectLogin, (req, res, next) => {
@@ -64,17 +64,17 @@ router.get('/edit/:id', redirectLogin, (req, res, next) => {
 
 // edit submit
 router.post('/edit/:id', redirectLogin, (req, res, next) => {
-  const id = req.params.id
-  const name = req.sanitize(req.body.name)
-  const sets = req.body.sets
-  const reps = req.body.reps
+  const id = req.params.id;
+  const name = req.sanitize(req.body.name);
+  const calories = parseInt(req.body.calories);
+  const time = parseInt(req.body.time);
 
-  const sql = "UPDATE workouts SET name = ?, sets = ?, reps = ? WHERE id = ?"
-  db.query(sql, [name, sets, reps, id], (err) => {
-    if (err) return next(err)
-    res.redirect('../workouts/list')
-  })
-})
+  const sql = "UPDATE workouts SET name = ?, calories = ?, time = ? WHERE id = ?";
+  db.query(sql, [name, calories, time, id], (err) => {
+    if (err) return next(err);
+    res.redirect('../workouts/list');
+  });
+});
 
 // delete book
 router.get('/delete/:id', redirectLogin, (req, res, next) => {
@@ -85,5 +85,10 @@ router.get('/delete/:id', redirectLogin, (req, res, next) => {
     res.redirect('../workouts/list')
   })
 })
+
+// live workout timer page
+router.get('/timer', redirectLogin, (req, res) => {
+  res.render("workouts/timer");
+});
 
 module.exports = router

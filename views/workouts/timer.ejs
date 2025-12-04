@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search – <%= shopData.shopName %></title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1><%= shopData.shopName %></h1>    
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+      </div>
+
+      <ul class="nav-center">
+        <li><a href="../about">About</a></li>
+        <li><a href="./add">Add Workouts</a></li>
+        <li><a href="./list">All Workouts</a></li>
+        <li><a href="./search">Search Workouts</a></li>
+        <li><a href="./timer">Workout Timer</a></li>
+      </ul> 
+
+      <div class="nav-right">
+        <a href="../auth/login" class="login-btn">Login</a>
+        <a href="/logout" class="login-btn">Logout</a>
+      </div>
+    </nav>
+  <div class="container">
+    <h1>Workout Timer</h1>
+    <div id="timer">0s</div>
+
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+
+        <form action="/workouts/add" method="POST" style="margin-top:20px;">
+          <input type="text" name="name" placeholder="Workout name" required>
+          <input type="number" name="calories" placeholder="Calories burned" required>
+
+          <!-- Hidden field for timer duration -->
+          <input type="hidden" id="duration" name="time">
+
+          <button type="submit">Log Workout</button>
+        </form>
+  </div>
+<script>
+let startTime;
+let timerInterval;
+
+const timerDisplay = document.getElementById("timer");
+const durationInput = document.getElementById("duration");
+
+document.getElementById("startBtn").addEventListener("click", () => {
+    startTime = Date.now();
+    timerInterval = setInterval(() => {
+        const elapsedMs = Date.now() - startTime;
+        const totalSecs = Math.floor(elapsedMs / 1000);
+        const hrs = Math.floor(totalSecs / 3600);
+        const mins = Math.floor((totalSecs % 3600) / 60);
+        const secs = totalSecs % 60;
+
+        const formatted =
+          String(hrs).padStart(2, "0") + ":" +
+          String(mins).padStart(2, "0") + ":" +
+          String(secs).padStart(2, "0");
+
+        timerDisplay.innerText = formatted;
+    }, 1000);
+});
+
+document.getElementById("stopBtn").addEventListener("click", () => {
+    clearInterval(timerInterval);
+    const elapsedMs = Date.now() - startTime;
+    const totalSeconds = Math.floor(elapsedMs / 1000);
+    durationInput.value = totalSeconds;
+
+    const hrs = Math.floor(totalSeconds / 3600);
+    const mins = Math.floor((totalSeconds % 3600) / 60);
+    const secs = totalSeconds % 60;
+
+    const formatted =
+      String(hrs).padStart(2, "0") + ":" +
+      String(mins).padStart(2, "0") + ":" +
+      String(secs).padStart(2, "0");
+
+    alert("Workout duration saved: " + formatted + ".\nNow submit the form to log the workout.");
+});
+</script>
+</body>
+</html>
