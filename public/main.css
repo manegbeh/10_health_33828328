@@ -58,6 +58,22 @@ input[type="number"] {
     box-sizing: border-box;
 }
 
+#timer {
+    font-size: 68px;      /* Make text much larger */
+    font-weight: 700;     /* Bold */
+    text-align: center;   /* Center the numbers */
+    margin: 20px 0;       /* Add spacing above/below */
+}
+
+select{
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    box-sizing: border-box;
+}
 /* Remember + Forgot password row */
 .flex-row {
     display: flex;

@@ -32,6 +32,17 @@
       <label>Workout Name</label>
       <input type="text" name="name" value="<%= workout.name %>" required>
 
+      <label>Activity</label>
+      <select name="activity" required>
+        <option value="walking" <%= workout.activity === "walking" ? "selected" : "" %>>Walking</option>
+        <option value="running" <%= workout.activity === "running" ? "selected" : "" %>>Running</option>
+        <option value="cycling" <%= workout.activity === "cycling" ? "selected" : "" %>>Cycling</option>
+        <option value="swimming" <%= workout.activity === "swimming" ? "selected" : "" %>>Swimming</option>
+        <option value="weightlifting" <%= workout.activity === "weightlifting" ? "selected" : "" %>>Weightlifting</option>
+        <option value="hiit" <%= workout.activity === "hiit" ? "selected" : "" %>>HIIT</option>
+        <option value="yoga" <%= workout.activity === "yoga" ? "selected" : "" %>>Yoga</option>
+      </select>
+
       <label>Calories Burned</label>
       <input type="number" step="1" name="calories" required>
 

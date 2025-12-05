@@ -33,7 +33,18 @@
 
         <form action="/workouts/add" method="POST" style="margin-top:20px;">
           <input type="text" name="name" placeholder="Workout name" required>
-          <input type="number" name="calories" placeholder="Calories burned" required>
+          <select name="activity" id="activitySelect" required>
+            <option value="" disabled selected>Select activity</option>
+            <option value="walking">Walking</option>
+            <option value="running">Running</option>
+            <option value="cycling">Cycling</option>
+            <option value="swimming">Swimming</option>
+            <option value="weightlifting">Weightlifting</option>
+            <option value="hiit">HIIT</option>
+            <option value="yoga">Yoga</option>
+          </select>
+          <button type="button" id="autoCalcBtn">Auto-calc Calories</button>
+          <input type="number" name="calories" id="caloriesInput" placeholder="Calories (auto-filled)" readonly>
 
           <!-- Hidden field for timer duration -->
           <input type="hidden" id="duration" name="time">
@@ -82,6 +93,40 @@ document.getElementById("stopBtn").addEventListener("click", () => {
       String(secs).padStart(2, "0");
 
     alert("Workout duration saved: " + formatted + ".\nNow submit the form to log the workout.");
+});
+
+// Auto calculate calories using API Ninjas + duration
+const autoBtn = document.getElementById("autoCalcBtn");
+const caloriesInput = document.querySelector('input[name="calories"]');
+
+autoBtn.addEventListener("click", async () => {
+  const duration = parseInt(document.getElementById("duration").value, 10);
+
+  if (!duration || duration <= 0) {
+    alert("Stop the timer first so we know the duration.");
+    return;
+  }
+
+  const activity = document.getElementById("activitySelect").value;
+  if (!activity) {
+    alert("Please select an activity first.");
+    return;
+  }
+
+  const res = await fetch("/workouts/calcCalories", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ activity, duration })
+  });
+
+  const data = await res.json();
+
+  if (typeof data.calories === "number") {
+    caloriesInput.value = data.calories;
+    alert("Calories estimated: " + data.calories);
+  } else {
+    alert("Could not calculate calories.");
+  }
 });
 </script>
 </body>
