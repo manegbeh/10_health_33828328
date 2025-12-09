@@ -149,4 +149,12 @@ router.post('/loggedin', function (req, res, next) {
     });
 });
 
+router.get('/logout', function (req, res) {
+    req.session.destroy(() => {
+        res.render('auth/logout', {
+            shopData: req.app.locals.shopData
+        });
+    });
+});
+
 module.exports = router;

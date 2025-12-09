@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logged Out – <%= shopData.shopName %></title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <h1><%= shopData.shopName %></h1>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="/" class="nav-logo"><%= shopData.shopName %></a>
+    </div>
+
+    <ul class="nav-center">
+      <li><a href="/about">About</a></li>
+      <li><a href="/meals/list">All Meals</a></li>
+      <li><a href="/workouts/list">All Workouts</a></li>
+      <li><a href="/auth/register">Register</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="/auth/login" class="login-btn">Login</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="section">
+      <h1>You have been logged out</h1>
+      <p>You successfully logged out of your account.</p>
+
+      <div class="actions">
+        <a href="/auth/login" class="btn btn-primary">Login Again</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
