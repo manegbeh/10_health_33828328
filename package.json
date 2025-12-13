@@ -1,0 +1,29 @@
+{
+  "name": "10_health_33828328",
+  "version": "1.0.0",
+  "description": "A full-stack fitness and wellbeing application built with **Node.js**, **Express**, **EJS**, and **MySQL**.   The app allows users to track workouts using a live timer, automatically calculate calories using an external API, record meals, and manage personal fitness data through a secure login system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manegbeh/10_health_33828328.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/manegbeh/10_health_33828328/issues"
+  },
+  "homepage": "https://github.com/manegbeh/10_health_33828328#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "express-sanitizer": "^1.0.6",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.3.1",
+    "mysql2": "^3.15.3"
+  }
+}
